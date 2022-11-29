@@ -1,0 +1,50 @@
+package com.devolution.demo.entity;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.Set;
+
+@Entity
+@Getter
+@Setter
+@Table(name = "purchase")
+public class Purchase {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "date_created")
+    private Timestamp dateCreated;
+
+    @Column(name = "date_updated")
+    private Timestamp dateUpdated;
+
+
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name="iduser")//priviazivaet po colonke v sql
+    @JsonBackReference
+    private User user;
+
+
+    @ManyToMany
+    @JoinTable(
+            name = "purchase_product",//nazvanie tretiei tablitzi
+            joinColumns = @JoinColumn(name = "idpur"),// svaizi s purchase
+            inverseJoinColumns = @JoinColumn(name = "idpro"))// sviazi s product
+    @JsonManagedReference
+    private Set<Product> products;
+
+}
