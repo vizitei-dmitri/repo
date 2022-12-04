@@ -36,8 +36,12 @@ public class Product {
     @Column(name = "weight")
     private double weight;
 
+    @OneToMany(mappedBy = "user")
+    private Set<Product> products;
 
     @ManyToMany(mappedBy = "products",fetch = FetchType.LAZY,cascade = CascadeType.ALL)//nazvanie polia v purchase
     @JsonBackReference
     private Set<Purchase> purchases;
+
+
 }
