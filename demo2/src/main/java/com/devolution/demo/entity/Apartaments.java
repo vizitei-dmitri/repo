@@ -1,13 +1,17 @@
 package com.devolution.demo.entity;
+
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Check;
 
 import javax.persistence.*;
 
 import java.math.BigInteger;
 import java.util.Set;
-public class apartaments {
+@Entity
+@Table
+@Getter
+@Setter
+public class Apartaments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

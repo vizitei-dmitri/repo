@@ -1,5 +1,7 @@
 package com.devolution.demo.service;
 
+import com.devolution.demo.entity.Apartaments;
+import com.devolution.demo.entity.Hotels;
 import com.devolution.demo.entity.User;
 import com.devolution.demo.repository.UserRepository;
 import com.devolution.demo.request.UserRequest;
@@ -56,6 +58,14 @@ public class UserService {
             return "User was deleted successfully";
         }
         return "User was not found";
+    }
+
+    public void test(){
+        Apartaments ap = new Apartaments();
+        if(ap.getIs_reservated()){
+            System.out.println("apartament is already reserved");
+        };
+
     }
 
 }

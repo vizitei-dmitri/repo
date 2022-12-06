@@ -37,7 +37,7 @@ public class Product {
     private double weight;
 
     @OneToMany(mappedBy = "user")
-    private Set<Product> products;
+    private Set<Hotels> hotels;
 
     @ManyToMany(mappedBy = "products",fetch = FetchType.LAZY,cascade = CascadeType.ALL)//nazvanie polia v purchase
     @JsonBackReference

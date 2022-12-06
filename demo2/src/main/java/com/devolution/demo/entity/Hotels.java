@@ -42,5 +42,5 @@ public class Hotels {
             name = "hotels_apartaments",
             joinColumns = @JoinColumn(name = "id_hotels"),
             inverseJoinColumns = @JoinColumn(name = "id_apartaments"))
-    private Set<Hotels> hotels;
+    private Set<Apartaments> apartaments;
     }
