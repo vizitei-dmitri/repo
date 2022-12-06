@@ -4,7 +4,7 @@ target/
 !**/src/test/**/target/
 
 ### application.properties ###
-demo2/src/main/resources/application.properties
+application.properties
 
 ### STS ###
 .apt_generated
@@ -33,4 +33,3 @@ build/
 
 ### VS Code ###
 .vscode/
-*.properties
