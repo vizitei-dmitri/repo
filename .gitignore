@@ -3,6 +3,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### application.properties ###
+demo2/src/main/resources/application.properties
+
 ### STS ###
 .apt_generated
 .classpath
@@ -30,3 +33,4 @@ build/
 
 ### VS Code ###
 .vscode/
+*.properties
