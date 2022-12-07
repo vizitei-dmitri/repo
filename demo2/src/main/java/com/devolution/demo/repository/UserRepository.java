@@ -9,6 +9,6 @@ import java.util.List;
 
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    @Query("SELECT u from User u where u.age>=10")
+//    @Query("SELECT u from User u where u.age>=10")
     List<User> findUsers();
 }

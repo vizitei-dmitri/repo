@@ -28,7 +28,7 @@ public class HotelService {
         hotels.setApartaments(hotelsRequest.getApartaments());
         hotels.setProduct(hotelsRequest.getProduct());
 
-        hotelsRequest.save(hotels);
+        hotelsRepository.save(hotels);
         return hotels;
     }
 

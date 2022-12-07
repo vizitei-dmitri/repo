@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface HotelsRepository extends JpaRepository<Hotels,Long> {
-    static List<Hotels> findHotels();
+    List<Hotels> findHotels();
 }
