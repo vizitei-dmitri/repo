@@ -3,6 +3,7 @@ package com.devolution.demo.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,12 +37,14 @@ public class Product {
     @Column(name = "weight")
     private double weight;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "this_product", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Set<Hotels> hotels;
 
     @ManyToMany(mappedBy = "products",fetch = FetchType.LAZY,cascade = CascadeType.ALL)//nazvanie polia v purchase
     @JsonBackReference
     private Set<Purchase> purchases;
+
 
 
 }

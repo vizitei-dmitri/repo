@@ -15,5 +15,7 @@ public class PurchaseResponse {
 
     private LocalDateTime dateUpdated;
 
+    private User user;
+
     private Set<ProductResponse> products;
 }

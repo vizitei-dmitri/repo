@@ -38,7 +38,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @WebAppConfiguration
 @RequiredArgsConstructor
-class TestControllerTest {
+class TestController {
 
     private final ObjectMapper mapper = new ObjectMapper();
 

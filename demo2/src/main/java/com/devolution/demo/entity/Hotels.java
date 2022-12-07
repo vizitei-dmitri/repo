@@ -24,7 +24,6 @@ public class Hotels {
     private String name;
 
     @Column(name = "stars")
-//    @Check(stars > 0 and stars <= 6)
     private int stars;
 
     @Column(name = "country")
@@ -33,9 +32,10 @@ public class Hotels {
     @Column(name = "city")
     private String city;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "idproduct")
-    private User user;
+    @JsonBackReference
+    private Product product; //User user
 
     @ManyToMany
     @JoinTable(
