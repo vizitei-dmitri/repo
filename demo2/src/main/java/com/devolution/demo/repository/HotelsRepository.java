@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface HotelsRepository extends JpaRepository<Product,Long> {
-    List<Hotels> findHotels();
+public interface HotelsRepository extends JpaRepository<Hotels,Long> {
+    static List<Hotels> findHotels();
 }

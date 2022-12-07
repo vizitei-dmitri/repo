@@ -37,7 +37,7 @@ public class Mapper {
         productResponse.setWeight(product.getWeight());
         productResponse.setPrice(product.getPrice());
         if(productResponse.getHotels() != null && !product.getHotels().isEmpty())
-            productResponse.setHotels(product.getHotels().stream().map(this::map).collect(Collectors.toSet()));
+            productResponse.setHotels(product.getHotels());
         return productResponse;
     }
 
@@ -55,7 +55,7 @@ public class Mapper {
         hotelsResponse.setStars(hotels.getStars());
         hotelsResponse.setName(hotelsResponse.getName());
         if (hotels.getApartaments() != null && !hotels.getApartaments().isEmpty())
-            hotelsResponse.setApartaments(hotels.getApartaments().stream().map(this::map).collect(Collectors.toSet()));
+            hotelsResponse.setApartaments(hotels.getApartaments());
         return hotelsResponse;
     }
 
