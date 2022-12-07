@@ -49,12 +49,12 @@ public class ApartamentsService {
     }
 
     public Apartaments getApartaments(Long id) {
-        Optional<Apartaments> apartaments = ApartamentsRepository.findById(id);
+        Optional<Apartaments> apartaments = apartamentsRepository.findById(id);
         return apartaments.orElseGet(Apartaments::new);
     }
 
     public List<Apartaments> getApartaments() {
-        List<Apartaments> apartaments = ApartamentsRepository.findApartaments();
+        List<Apartaments> apartaments = apartamentsRepository.getApartaments();
         return apartaments;
     }
 

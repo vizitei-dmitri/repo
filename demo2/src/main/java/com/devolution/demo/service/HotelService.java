@@ -54,7 +54,7 @@ public class HotelService {
     }
 
     public List<Hotels> getHotels() {
-        List<Hotels> hotels = HotelsRepository.findHotels();
+        List<Hotels> hotels = hotelsRepository.findHotels();
         return hotels;
     }
 
