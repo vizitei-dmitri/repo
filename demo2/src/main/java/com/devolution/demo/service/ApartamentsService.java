@@ -1,7 +1,6 @@
 package com.devolution.demo.service;
 
 import com.devolution.demo.entity.Apartaments;
-import com.devolution.demo.entity.Purchase;
 import com.devolution.demo.repository.ApartamentsRepository;
 import com.devolution.demo.request.ApartamentsRequest;
 import org.springframework.stereotype.Service;
@@ -17,7 +16,6 @@ public class ApartamentsService {
 
     public Apartaments addApartament(ApartamentsRequest apartamentsRequest) {
         Apartaments apartaments = new Apartaments();
-        Purchase purchase = new Purchase();
 
         apartaments.setRooms(apartamentsRequest.getRooms());
         apartaments.setSeasight(apartamentsRequest.getSeasight());
