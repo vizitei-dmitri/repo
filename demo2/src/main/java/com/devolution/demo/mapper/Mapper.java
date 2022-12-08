@@ -3,7 +3,6 @@ package com.devolution.demo.mapper;
 import com.devolution.demo.entity.*;
 import com.devolution.demo.response.*;
 import org.springframework.stereotype.Component;
-
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;
@@ -25,20 +24,9 @@ public class Mapper {
         purchaseResponse.setName(purchase.getName());
         purchaseResponse.setDateCreated(map(purchase.getDateCreated()));
         purchaseResponse.setDateUpdated(map(purchase.getDateUpdated()));
-        if (purchase.getProducts() != null && !purchase.getProducts().isEmpty())
-            purchaseResponse.setProducts(purchase.getProducts().stream().map(this::map).collect(Collectors.toSet()));
+        if (purchase.getHotels() != null && !purchase.getHotels().isEmpty())
+            purchaseResponse.setHotels(purchase.getHotels().stream().map(this::map).collect(Collectors.toSet()));
         return purchaseResponse;
-    }
-
-    public ProductResponse map(Product product) {
-        ProductResponse productResponse = new ProductResponse();
-        productResponse.setDateCreated(map(product.getDateCreated()));
-        productResponse.setDateUpdated(map(product.getDateUpdated()));
-        productResponse.setWeight(product.getWeight());
-        productResponse.setPrice(product.getPrice());
-        if(productResponse.getHotels() != null && !product.getHotels().isEmpty())
-            productResponse.setHotels(product.getHotels());
-        return productResponse;
     }
 
     public LocalDateTime map(Timestamp timestamp) {

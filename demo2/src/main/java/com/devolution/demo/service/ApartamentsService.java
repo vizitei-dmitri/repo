@@ -1,15 +1,13 @@
 package com.devolution.demo.service;
 
 import com.devolution.demo.entity.Apartaments;
-import com.devolution.demo.entity.Hotels;
+import com.devolution.demo.entity.Purchase;
 import com.devolution.demo.repository.ApartamentsRepository;
-import com.devolution.demo.repository.HotelsRepository;
 import com.devolution.demo.request.ApartamentsRequest;
-import com.devolution.demo.request.HotelsRequest;
-
+import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class ApartamentsService {
     private final ApartamentsRepository apartamentsRepository;
 
@@ -19,6 +17,8 @@ public class ApartamentsService {
 
     public Apartaments addApartament(ApartamentsRequest apartamentsRequest) {
         Apartaments apartaments = new Apartaments();
+        Purchase purchase = new Purchase();
+
         apartaments.setRooms(apartamentsRequest.getRooms());
         apartaments.setSeasight(apartamentsRequest.getSeasight());
 
@@ -28,7 +28,10 @@ public class ApartamentsService {
         apartaments.setHotels(apartamentsRequest.getHotels());
         apartaments.setRooms(apartamentsRequest.getRooms());
 
-        apartamentsRepository.save(apartaments);
+        if (apartaments.getIs_reservated()!=false){
+            apartamentsRepository.save(apartaments);
+            return apartaments;
+        }
         return apartaments;
     }
 
@@ -54,7 +57,7 @@ public class ApartamentsService {
     }
 
     public List<Apartaments> getApartaments() {
-        List<Apartaments> apartaments = apartamentsRepository.getApartaments();
+        List<Apartaments> apartaments = apartamentsRepository.findAll();
         return apartaments;
     }
 

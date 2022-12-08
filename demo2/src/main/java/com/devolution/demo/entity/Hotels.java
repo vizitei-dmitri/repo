@@ -3,13 +3,8 @@ package com.devolution.demo.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Check;
-
 import javax.persistence.*;
-
 import java.util.Set;
-
-
 
 @Entity
 @Getter
@@ -32,10 +27,9 @@ public class Hotels {
     @Column(name = "city")
     private String city;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "idproduct")
+    @ManyToMany(mappedBy = "hotels",fetch = FetchType.LAZY,cascade = CascadeType.ALL)//nazvanie polia v purchase
     @JsonBackReference
-    private Product product; //User user
+    private Set<Purchase> purchases;
 
     @ManyToMany
     @JoinTable(

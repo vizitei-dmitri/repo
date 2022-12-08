@@ -1,16 +1,10 @@
 package com.devolution.demo.entity;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
@@ -41,10 +35,10 @@ public class Purchase {
 
     @ManyToMany
     @JoinTable(
-            name = "purchase_product",//nazvanie tretiei tablitzi
+            name = "purchase_hotels",//nazvanie tretiei tablitzi
             joinColumns = @JoinColumn(name = "idpur"),// svaizi s purchase
-            inverseJoinColumns = @JoinColumn(name = "idpro"))// sviazi s product
+            inverseJoinColumns = @JoinColumn(name = "idhot"))// sviazi s product
     @JsonManagedReference
-    private Set<Product> products;
+    private Set<Hotels> hotels;
 
 }

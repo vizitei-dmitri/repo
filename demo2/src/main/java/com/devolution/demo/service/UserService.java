@@ -1,11 +1,8 @@
 package com.devolution.demo.service;
 
-import com.devolution.demo.entity.Apartaments;
-import com.devolution.demo.entity.Hotels;
 import com.devolution.demo.entity.User;
 import com.devolution.demo.repository.UserRepository;
 import com.devolution.demo.request.UserRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -47,7 +44,7 @@ public class UserService {
     }
 
     public List<User> getUsers() {
-        List<User> users = userRepository.findUsers();
+        List<User> users = userRepository.findAll();
         return users;
     }
 
@@ -60,12 +57,11 @@ public class UserService {
         return "User was not found";
     }
 
-    public void test(){
-        Apartaments ap = new Apartaments();
-        if(ap.getIs_reservated()){
-            System.out.println("apartament is already reserved");
-        };
-
-    }
+//    public void test(){
+//        Apartaments ap = new Apartaments();
+//        if(ap.getIs_reservated()){
+//            System.out.println("apartament is already reserved");
+//        };
+//    }
 
 }

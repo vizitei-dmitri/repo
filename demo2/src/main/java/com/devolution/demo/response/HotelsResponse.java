@@ -1,10 +1,8 @@
 package com.devolution.demo.response;
 
 import com.devolution.demo.entity.Apartaments;
-import com.devolution.demo.entity.Product;
-import com.devolution.demo.entity.User;
+import com.devolution.demo.entity.Purchase;
 import lombok.Data;
-
 import java.util.Set;
 @Data
 public class HotelsResponse {
@@ -17,7 +15,7 @@ public class HotelsResponse {
 
     private String city;
 
-    private Product product;
-
     private Set<Apartaments> apartaments;
+
+    private Set<Purchase> purchases;
 }
