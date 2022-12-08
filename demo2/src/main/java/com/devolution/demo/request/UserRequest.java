@@ -1,11 +1,6 @@
 package com.devolution.demo.request;
-
-
-import com.devolution.demo.response.PurchaseResponse;
 import lombok.Data;
-
 import java.util.Set;
-
 @Data
 public class UserRequest {
 

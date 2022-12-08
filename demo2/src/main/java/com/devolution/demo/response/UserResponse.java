@@ -1,8 +1,5 @@
 package com.devolution.demo.response;
-
-
 import lombok.Data;
-
 import java.util.Set;
 
 @Data
