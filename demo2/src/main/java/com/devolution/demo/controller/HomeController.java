@@ -1,4 +1,4 @@
-package com.devolution.frontend.controller;
+package com.devolution.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
