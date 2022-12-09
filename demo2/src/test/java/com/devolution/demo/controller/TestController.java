@@ -2,7 +2,6 @@ package com.devolution.demo.controller;
 
 import com.devolution.demo.DemoApplication;
 import com.devolution.demo.request.UserRequest;
-import com.devolution.demo.response.TestResponse;
 import com.devolution.demo.response.UserResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -61,8 +60,8 @@ class TestController {
 
         String result = listResults.getResponse().getContentAsString();
 
-        TestResponse testResponse = mapper.readValue(result, TestResponse.class);
-        assertThat(testResponse.getMessage()).isEqualTo("Hello world!");
+        String testResponse = mapper.readValue(result, String.class);
+        assertThat(testResponse).isEqualTo("Hello world!");
     }
 
     @SneakyThrows
