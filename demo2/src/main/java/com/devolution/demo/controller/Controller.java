@@ -13,6 +13,7 @@ import com.devolution.demo.service.HotelService;
 import com.devolution.demo.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -48,7 +49,7 @@ public class Controller {
         return mapper.map(hotelService.addHotel(hotelsRequest));
     }
     @PostMapping("/api/user/hotels/apartaments")
-    public ApartamentResponse addApartament(@RequestBody ApartamentsRequest apartamentsRequest){
+    public ApartamentResponse addApartament(@RequestBody ApartamentsRequest apartamentsRequest) throws ParseException {
         return mapper.map(apartamentsService.addApartament(apartamentsRequest));
     }
 

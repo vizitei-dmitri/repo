@@ -57,6 +57,8 @@ public class UserService {
         return "User was not found";
     }
 
+
+
 //    public void test(){
 //        Apartaments ap = new Apartaments();
 //        if(ap.getIs_reservated()){

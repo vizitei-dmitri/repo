@@ -13,7 +13,9 @@ public class ApartamentResponse {
 
     private Boolean is_reservated;
 
-    private BigInteger reservation_time;
+    private String reservation_time_start;
+
+    private String reservation_time_finish;
 
     private Set<Hotels> hotels;
 }

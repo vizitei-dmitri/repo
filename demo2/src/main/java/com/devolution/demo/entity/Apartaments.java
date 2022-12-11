@@ -23,8 +23,11 @@ public class Apartaments {
     @Column(name = "is_reservated")
     private Boolean is_reservated;
 
-    @Column(name = "reservation_time")
-    private BigInteger reservation_time;
+    @Column(name = "reservation_time_start")
+    private String reservation_time_start;
+
+    @Column(name = "reservation_time_finish")
+    private String reservation_time_finish;
 
     @ManyToMany(mappedBy = "apartaments")
     private Set<Hotels> hotels;

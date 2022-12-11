@@ -53,6 +53,9 @@ public class Mapper {
         apartamentResponse.setRooms(apartaments.getRooms());
         apartamentResponse.setSeasight(apartaments.getSeasight());
         apartamentResponse.setIs_reservated(apartaments.getIs_reservated());
+        apartamentResponse.setReservation_time_start(apartaments.getReservation_time_start());
+        apartamentResponse.setReservation_time_finish(apartaments.getReservation_time_finish());
+//        apartamentResponse.setHotels(apartaments.setHotels());
         return apartamentResponse;
 
     }

@@ -34,7 +34,8 @@ create table apartaments(
                         rooms NUMERIC NOT NULL check (rooms > 0 and rooms < 10),
                         seasight bool not null,
                         is_reservated bool not null,
-                        reservation_time NUMERIC not null);
+                        reservation_time_start varchar(16) not null,
+                        reservation_time_finish varchar(16) not null);
 
 create table hotels_apartaments(
                         id bigserial primary key,
