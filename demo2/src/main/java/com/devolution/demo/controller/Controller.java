@@ -6,7 +6,6 @@ import com.devolution.demo.request.HotelsRequest;
 import com.devolution.demo.request.UserRequest;
 import com.devolution.demo.response.ApartamentResponse;
 import com.devolution.demo.response.HotelsResponse;
-import com.devolution.demo.response.TestResponse;
 import com.devolution.demo.response.UserResponse;
 import com.devolution.demo.service.ApartamentsService;
 import com.devolution.demo.service.HotelService;
@@ -33,11 +32,6 @@ public class Controller {
         this.userService = userService;
         this.hotelService = hotelService;
         this.apartamentsService = apartamentsService;
-    }
-
-    @GetMapping
-    public TestResponse hello() {
-        return new TestResponse("Hello world!");
     }
 
     @PostMapping("/api/user")
